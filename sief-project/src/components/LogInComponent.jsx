@@ -1,6 +1,7 @@
-import { formHooks } from "../hooks/formHooks";
+import { loginHook } from "../hooks/loginHook";
 import { useRef, useEffect } from "react";
 import styles from "../styles/logInStyles.css";
+import { SignInComponent } from "./SignInComponent";
 
 export const LogInComponent = () => {
   const formRef = useRef();
@@ -14,7 +15,7 @@ export const LogInComponent = () => {
     password: "",
   };
 
-  const { form, onInputChange } = formHooks(dataLogIn);
+  const { form, onInputChange } = loginHook(dataLogIn);
 
   const { email, password } = form;
 
@@ -87,49 +88,7 @@ export const LogInComponent = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="card-back">
-                      <div className="center-wrap">
-                        <div className="section text-center">
-                          <h4 className="mb-4 pb-3">Registrarse</h4>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="logname"
-                              className="form-style"
-                              placeholder="Your Full Name"
-                              id="logname"
-                              autoComplete="off"
-                            ></input>
-                            <i className="input-icon uil uil-user"></i>
-                          </div>
-                          <div className="form-group mt-2">
-                            <input
-                              type="email"
-                              name="logemail"
-                              className="form-style"
-                              placeholder="Your Email"
-                              id="logemail"
-                              autoComplete="off"
-                            ></input>
-                            <i className="input-icon uil uil-at"></i>
-                          </div>
-                          <div className="form-group mt-2">
-                            <input
-                              type="password"
-                              name="logpass"
-                              className="form-style"
-                              placeholder="Your Password"
-                              id="logpass"
-                              autoComplete="off"
-                            ></input>
-                            <i className="input-icon uil uil-lock-alt"></i>
-                          </div>
-                          <a href="#" className="btn mt-4">
-                            submit
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                    <SignInComponent />
                   </div>
                 </div>
               </div>
