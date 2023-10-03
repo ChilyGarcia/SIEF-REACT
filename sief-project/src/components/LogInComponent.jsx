@@ -2,6 +2,7 @@ import { loginHook } from "../hooks/loginHook";
 import { useRef, useEffect } from "react";
 import styles from "../styles/logInStyles.css";
 import { SignInComponent } from "./SignInComponent";
+import { Link } from "react-router-dom";
 
 export const LogInComponent = () => {
   const formRef = useRef();
@@ -82,7 +83,15 @@ export const LogInComponent = () => {
                               type="submit"
                               className="mb-0 mt-4 btn btn-primary"
                             >
-                              Ingresar
+                              <Link
+                                to="/inicio"
+                                style={{
+                                  color: "white",
+                                  textDecoration: "none",
+                                }}
+                              >
+                                Iniciar sesión
+                              </Link>
                             </button>
                           </form>
                         </div>
