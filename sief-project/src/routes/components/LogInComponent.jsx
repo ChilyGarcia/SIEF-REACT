@@ -1,6 +1,6 @@
-import { loginHook } from "../hooks/loginHook";
+import { loginHook } from "../../hooks/loginHook";
 import { useRef, useEffect } from "react";
-import styles from "../styles/logInStyles.module.css";
+import styles from "../../styles/loginStyles.module.css";
 import { SignInComponent } from "./SignInComponent";
 import { Link } from "react-router-dom";
 
@@ -32,7 +32,7 @@ export const LogInComponent = () => {
           <div className="row full-height justify-content-center">
             <div className="col-12 text-center align-self-center py-5">
               <div className="section pb-5 pt-5 pt-sm-2 text-center">
-                <h6 className="mb-0 pb-3">
+                <h6 className={`mb-0 pb-3 ${styles["custom-span"]}`}>
                   <span>Iniciar sesión</span>
                   <span>Registrarse</span>
                 </h6>
@@ -48,7 +48,11 @@ export const LogInComponent = () => {
                     <div className={styles["card-front"]}>
                       <div className={styles["center-wrap"]}>
                         <div className={styles["section"] + " text-center"}>
-                          <h4 className="mb-4 pb-3">Iniciar sesión</h4>
+                          <h4
+                            className={`mb-4 pb-3 ${styles["custom-heading"]}`}
+                          >
+                            Iniciar sesión
+                          </h4>
 
                           <form onSubmit={onSubmit}>
                             <div className={styles["form-group"]}>
@@ -87,12 +91,12 @@ export const LogInComponent = () => {
 
                             <button
                               type="submit"
-                              className="mb-0 mt-4 btn btn-primary"
+                              className={styles["btn"] + " mt-4"}
                             >
                               <Link
                                 to="/inicio"
                                 style={{
-                                  color: "white",
+                                  color: "#6b1212",
                                   textDecoration: "none",
                                 }}
                               >

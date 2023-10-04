@@ -1,7 +1,7 @@
 import React from "react";
-import { signInHook } from "../hooks/signInHook";
+import { signInHook } from "../../hooks/signInHook";
 import Swal from "sweetalert2";
-import styles from "../styles/logInStyles.module.css";
+import styles from "../../styles/loginStyles.module.css";
 
 export const SignInComponent = () => {
   const dataSignIn = {
@@ -43,7 +43,7 @@ export const SignInComponent = () => {
       <div className={styles["card-back"]}>
         <div className={styles["center-wrap"]}>
           <div className={styles["section"] + " text-center"}>
-            <h4 className="mb-4 pb-3">Registrarse</h4>
+            <h4 className={`mb-4 pb-3 ${styles["custom-heading"]}`}>Registrarse</h4>
             <form onSubmit={onSubmit}>
               <div className={styles["form-group"]}>
                 <input
@@ -85,7 +85,7 @@ export const SignInComponent = () => {
                 <i className={styles["input-icon"] + " uil uil-lock-alt"}></i>
               </div>
 
-              <button type="submit" className="mb-0 mt-4 btn btn-primary">
+              <button type="submit" className={styles["btn"] + " mt-4"}>
                 Registrarse
               </button>
             </form>
