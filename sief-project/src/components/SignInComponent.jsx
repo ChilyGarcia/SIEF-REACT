@@ -1,6 +1,7 @@
 import React from "react";
 import { signInHook } from "../hooks/signInHook";
 import Swal from "sweetalert2";
+import styles from "../styles/logInStyles.module.css";
 
 export const SignInComponent = () => {
   const dataSignIn = {
@@ -39,49 +40,49 @@ export const SignInComponent = () => {
 
   return (
     <>
-      <div className="card-back">
-        <div className="center-wrap">
-          <div className="section text-center">
+      <div className={styles["card-back"]}>
+        <div className={styles["center-wrap"]}>
+          <div className={styles["section"] + " text-center"}>
             <h4 className="mb-4 pb-3">Registrarse</h4>
             <form onSubmit={onSubmit}>
-              <div className="form-group">
+              <div className={styles["form-group"]}>
                 <input
                   type="text"
                   name="nombres"
-                  className="form-style"
+                  className={styles["form-style"]}
                   placeholder="Nombres y apellidos"
                   id="nombres"
                   autoComplete="off"
                   value={nombres}
                   onChange={(event) => onInputChange(event)}
                 ></input>
-                <i className="input-icon uil uil-user"></i>
+                <i className={styles["input-icon"] + " uil uil-user"}></i>
               </div>
-              <div className="form-group mt-2">
+              <div className={styles["form-group"] + " mt-2"}>
                 <input
                   type="email"
                   name="email"
-                  className="form-style"
+                  className={styles["form-style"]}
                   placeholder="Email"
                   id="email"
                   autoComplete="off"
                   value={email}
                   onChange={(event) => onInputChange(event)}
                 ></input>
-                <i className="input-icon uil uil-at"></i>
+                <i className={styles["input-icon"] + " uil uil-at"}></i>
               </div>
-              <div className="form-group mt-2">
+              <div className={styles["form-group"] + " mt-2"}>
                 <input
                   type="password"
                   name="password"
-                  className="form-style"
+                  className={styles["form-style"]}
                   placeholder="Contraseña"
                   id="password"
                   autoComplete="off"
                   value={password}
                   onChange={(event) => onInputChange(event)}
                 ></input>
-                <i className="input-icon uil uil-lock-alt"></i>
+                <i className={styles["input-icon"] + " uil uil-lock-alt"}></i>
               </div>
 
               <button type="submit" className="mb-0 mt-4 btn btn-primary">
