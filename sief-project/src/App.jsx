@@ -1,6 +1,6 @@
 import React from "react";
-import { InicioScreen } from "./routes/InicioScreen";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { HomeScreen } from "./routes/homeScreen";
 import { LoginSignInScreen } from "./routes/LoginSignInScreen";
 
 export const App = () => {
@@ -8,8 +8,8 @@ export const App = () => {
     <>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<LoginSignInScreen />} />
-        <Route path="/inicio" element={<InicioScreen></InicioScreen>}></Route>
+        <Route path="/login" element={<LoginSignInScreen/>} />
+        <Route path="/inicio" element={<HomeScreen/>}></Route>
       </Routes>
     </>
   );
