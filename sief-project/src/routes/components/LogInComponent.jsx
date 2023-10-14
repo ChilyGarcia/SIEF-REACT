@@ -94,7 +94,7 @@ export const LogInComponent = () => {
                               className={styles["btn"] + " mt-4"}
                             >
                               <Link
-                                to="/inicio"
+                                to="/graficas"
                                 style={{
                                   color: "#6b1212",
                                   textDecoration: "none",

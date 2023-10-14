@@ -9,15 +9,15 @@ export const PanelComponent = () => {
       <nav className={styles["main-menu"]}>
         <ul>
           <li>
-            <a href="#">
+            <Link to="/graficas">
               <i
                 className={`fa fa-bar-chart-o fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
               <span className={styles["nav-text"]}>Gráficas</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/infoEstadistica">
               <i
                 className={`fa fa-book fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
@@ -25,39 +25,39 @@ export const PanelComponent = () => {
               <span className={styles["nav-text"]}>
                 Información estadistica
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/auditorias">
               <i
                 className={`fa fa-table fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
               <span className={styles["nav-text"]}>Auditorias</span>
-            </a>
+            </Link>
           </li>
           <li className={styles["has-subnav"]}>
-            <a href="#">
+            <Link to="/nuevaInfo">
               <i
                 className={`fa fa-plus fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
               <span className={styles["nav-text"]}>Nueva información</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link to="/infoHistorica">
               <i
                 className={`fa fa-info fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
               <span className={styles["nav-text"]}>Informacion histórica</span>
-            </a>
+            </Link>
           </li>
           <li className={styles["has-subnav"]}>
-            <a href="#">
+            <Link to="/nuevoUsuario">
               <i
                 className={`fa fa-user fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
               ></i>
               <span className={styles["nav-text"]}>Nuevo usuario</span>
-            </a>
+            </Link>
           </li>
         </ul>
 
