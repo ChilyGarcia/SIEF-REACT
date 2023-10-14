@@ -6,7 +6,7 @@ export const PanelComponent = () => {
   return (
     <>
       <div className={styles.area}></div>
-      <nav className={styles["main-menu"]}>
+      <nav className={`${styles["main-menu"]} ${styles["fixed-menu"]}`}>
         <ul>
           <li>
             <Link to="/graficas">

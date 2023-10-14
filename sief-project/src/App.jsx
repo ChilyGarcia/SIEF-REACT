@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { HomeScreen } from "./routes/homeScreen";
 import { LoginSignInScreen } from "./routes/LoginSignInScreen";
 import { GraphicsScreen } from "./routes/GraphicsScreen";
 import { StatisticalInfoScreen } from "./routes/StatisticalInfoScreen";
