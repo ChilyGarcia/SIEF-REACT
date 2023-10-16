@@ -14,28 +14,28 @@
   font-size: 20px;
 }
 
-.main-menu:hover, nav.main-menu.expanded {
-  width:250px;
-  overflow:hidden;
-  opacity:1;
-  
-  }
-  
-  .main-menu {
-  background:#6b1212;
-  position:absolute;
-  top:0;
-  bottom:0;
-  height:100%;
-  left:0;
-  width:55px;
-  overflow:hidden;
-  -webkit-transition:width .2s linear;
-  transition:width .2s linear;
-  -webkit-transform:translateZ(0) scale(1,1);
+.main-menu:hover,
+nav.main-menu.expanded {
+  width: 250px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.main-menu {
+  background: #991a1a;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  width: 55px;
+  overflow: hidden;
+  -webkit-transition: width 0.2s linear;
+  transition: width 0.2s linear;
+  -webkit-transform: translateZ(0) scale(1, 1);
   box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
-    opacity:1;
-  }
+  opacity: 1;
+}
 .main-menu > ul {
   margin: 7px 0;
 }
@@ -52,14 +52,13 @@
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
-  color: #ffeba7;
+  color: #fcfcfc;
   font-family: arial;
   font-size: 14px;
   text-decoration: none;
   -webkit-transform: translateZ(0) scale(1, 1);
   -webkit-transition: all 0.1s linear;
   transition: all 0.3s ease;
-
 }
 
 .main-menu .nav-icon {
@@ -77,7 +76,7 @@
   display: table-cell;
   vertical-align: middle;
   width: 190px;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 .main-menu > ul.logout {
@@ -123,7 +122,7 @@ nav.main-menu li.active > a,
 .dropdown-menu > .active > a:focus,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
-  color: #6b1212;
+  color: #991a1a;
   background-color: #ffffff;
 }
 .area {
@@ -140,10 +139,71 @@ nav.main-menu li.active > a,
   width: 250px; /* Establece el ancho deseado */
   height: 100%; /* Establece la altura al 100% */
   z-index: 999; /* Ajusta el índice z para asegurarte de que esté por encima de otros elementos */
-  background: #6b1212; /* Establece el fondo */
+  background: #991a1a; /* Establece el fondo */
   overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
   box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
   opacity: 1;
+}
+
+/* Agregar esquinas circulares al elemento cuando el mouse está encima */
+.round-corners {
+  border-radius: 20px; /* Ajusta el valor según tus preferencias */
+  transition: border-radius 0.3s ease; /* Transición suave */
+}
+
+/* Estilos para el navbar */
+.navbar {
+  background-color: #f3efef;
+  padding: 10px;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra aquí */
+}
+
+button {
+  background-color: #f3efef;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+/* Estilos para el botón de cierre del sidebar */
+#closeSidebar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Añadir transición al abrir/cerrar el sidebar */
+#mySidebar {
+  transition: 0.8s;
+}
+
+/* Estilos para el contenido del sidebar */
+.sidebar-content {
+  padding: 20px;
+  color: white;
+}
+
+/* Cambiar ancho del sidebar cuando esté abierto */
+.sidebar-open {
+  width: 250px;
+}
+
+.navbar-open {
+  margin-left: 250px;
 }
 
 @font-face {
