@@ -191,3 +191,13 @@ td.text-right {
   margin: 0;
   margin-right: 10px; /* Ajusta el valor según tus necesidades */
 }
+
+.paginationOpen{
+  margin-top: 3%;
+  margin-left: 58%;
+}
+
+.paginationClose{
+  margin-top: 3%;
+  margin-left: 50%;
+}
