@@ -12,13 +12,30 @@
 
 /*** Table Styles **/
 
-.tableClose{
+.inputContainerOpen {
+  margin-left: 23%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  max-width: 1000px; /* Ajusta este valor según tus necesidades */
+  padding: 5px;
+  width: 100%;
+}
+.inputContainerClose {
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  max-width: 1000px; /* Ajusta este valor según tus necesidades */
+  padding: 5px;
+  width: 100%;
+}
+
+.tableClose {
   background: white;
   border-radius: 3px;
   border-collapse: collapse;
   height: 320px;
   margin-left: 2%;
-  margin-top: 5%;
+
   max-width: 1300px;
   padding: 5px;
   width: 100%;
@@ -31,8 +48,8 @@
   border-radius: 3px;
   border-collapse: collapse;
   height: 300px; /* Ajusta este valor según tus necesidades */
-  margin-left: 25%;
-  margin-top: 5%;
+  margin-left: 23%;
+
   max-width: 1000px; /* Ajusta este valor según tus necesidades */
   padding: 5px;
   width: 100%;
@@ -41,8 +58,8 @@
 }
 
 .thClose {
-  color: #d5dde5;
-  background: #1b1e24;
+  color: #ffffff;
+  background: #991a1a;
   border-bottom: 4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size: 18px;
@@ -53,23 +70,22 @@
   text-align: left;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align: middle;
-   /* Ajusta este valor según tus necesidades */
+  /* Ajusta este valor según tus necesidades */
 }
 
 .thOpen {
-  color: #d5dde5;
-  background: #1b1e24;
-  border-bottom: 4px solid #9ea7af;
-  border-right: 1px solid #343a45;
+  color: #ffffff;
+  background: #991a1a;
+  border-bottom: 4px solid #ffffff;
+  border-right: 1px solid #ffffff;
   font-size: 16px; /* Ajusta este valor según tus necesidades */
   font-weight: 90;
   padding-left: 10px; /* Ajusta este valor según tus necesidades */
   padding-right: 30px; /* Ajusta este valor según tus necesidades */
   padding-top: 20px;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   vertical-align: middle;
-
 }
 
 th:first-child {
@@ -129,13 +145,11 @@ tr:last-child td:last-child {
   font-size: 18px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
   border-right: 1px solid #c1c3d1;
- 
 }
 
 td:last-child {
   border-right: 0px;
 }
-
 
 th.text-center {
   text-align: center;
@@ -155,4 +169,25 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  max-width: 400px; /* Ajusta el valor según tus necesidades */
+  padding: 5px;
+}
+
+.buttonGroup {
+  margin-left: 10px; /* Espacio entre el input y los botones */
+  display: flex;
+  height: 40px;
+  margin-top: 5px; /* Ajusta el valor según tus necesidades */
+}
+
+/* Estilos para el input y los botones dentro de .inputGroup y .buttonGroup */
+.inputGroup input,
+.buttonGroup button {
+  margin: 0;
+  margin-right: 10px; /* Ajusta el valor según tus necesidades */
 }

@@ -1,14 +1,28 @@
 import React from "react";
 import styles from "../../styles/statisticalInformationStyles.module.css";
 
-export const StatisticalInformationComponent = ({estadoSideBar}) => {
+export const StatisticalInformationComponent = ({ estadoSideBar }) => {
+  const tableClass = estadoSideBar ? styles.tableOpen : styles.tableClose;
+  const thClass = estadoSideBar ? styles.thOpen : styles.thClose;
+  const inputContainerClass = estadoSideBar
+    ? styles.inputContainerOpen
+    : styles.inputContainerClose;
 
-  const tableClass = estadoSideBar ? styles.tableOpen : styles.tableClose
-  const thClass = estadoSideBar ? styles.thOpen : styles.thClose
-
-    
   return (
     <>
+      <div className={inputContainerClass}>
+        <div className={styles.inputGroup}>
+          <input
+            type="text"
+            placeholder="Ingrese el programa"
+            className="form-control"
+          />
+          <div className={styles.buttonGroup}>
+            <button className="btn btn-outline-danger">Buscar</button>
+            <button className="btn btn-outline-success">Excel</button>
+          </div>
+        </div>
+      </div>
       <table className={tableClass}>
         <thead>
           <tr>
