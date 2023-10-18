@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import styles from "../../styles/panelStyles.module.css";
 import { Link } from "react-router-dom";
 
-export const PanelComponent = () => {
+export const PanelComponent = ({ enviarEstado }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    enviarEstado(!isSidebarOpen);
   };
+
+  
 
   return (
     <div className={styles.panelContainer}>

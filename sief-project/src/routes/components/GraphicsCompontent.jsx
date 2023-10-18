@@ -14,7 +14,13 @@ import { Bar } from "react-chartjs-2";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
-export const GraphicsCompontent = () => {
+export const GraphicsCompontent = ({estadoSideBar}) => {
+
+  console.log(estadoSideBar)
+
+
+  const containerClass = estadoSideBar ? styles.containerOpen : styles.containerClosed;
+
   const data = {
     labels: ["2019", "2020", "2021"],
     datasets: [
@@ -38,7 +44,7 @@ export const GraphicsCompontent = () => {
   const options = {};
   return (
     <>
-      <div className={styles.container}>
+      <div className={containerClass}>
         <div className={styles.card}>
           <Bar data={data} options={options}></Bar>
         </div>
