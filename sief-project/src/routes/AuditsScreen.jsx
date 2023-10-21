@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import { PanelComponent } from "./components/PanelComponent";
+import { AuditsComponent } from "./components/AuditsComponent";
 
 export const AuditsScreen = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const enviarEstadoSideBar = (estado) => {
+    setIsOpen(estado);
+  };
+
   return (
     <>
-      <PanelComponent></PanelComponent>
-      <h1>Este es el componente de las auditorias</h1>
+      <PanelComponent enviarEstado={enviarEstadoSideBar}></PanelComponent>
+      <AuditsComponent estadoSideBar={isOpen}></AuditsComponent>
     </>
   );
 };
