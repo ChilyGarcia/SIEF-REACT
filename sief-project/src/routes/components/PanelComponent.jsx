@@ -10,8 +10,6 @@ export const PanelComponent = ({ enviarEstado }) => {
     enviarEstado(!isSidebarOpen);
   };
 
-  
-
   return (
     <div className={styles.panelContainer}>
       <div
@@ -36,6 +34,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   <i
                     className={`fa fa-bar-chart-o fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
                   ></i>
+
                   <span className={styles["nav-text"]}>Gráficas</span>
                 </Link>
               </li>
@@ -65,7 +64,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   <span className={styles["nav-text"]}>Nueva información</span>
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/infoHistorica" className={styles["round-corners"]}>
                   <i
                     className={`fa fa-info fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
@@ -74,7 +73,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                     Informacion histórica
                   </span>
                 </Link>
-              </li>
+              </li> */}
               <li className={styles["has-subnav"]}>
                 <Link to="/nuevoUsuario" className={styles["round-corners"]}>
                   <i

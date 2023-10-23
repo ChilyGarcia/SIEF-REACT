@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { PanelComponent } from "./components/PanelComponent";
+import { NewStatisticalInformationComponent } from "./components/NewStatisticalInformationComponent";
 
 export const NewInformationScreen = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const enviarEstadoSideBar = (estado) => {
+    setIsOpen(estado);
+  };
   return (
     <>
-      <PanelComponent></PanelComponent>
-      <h1>Este es el componente de la nueva informacion</h1>
+      <PanelComponent enviarEstado={enviarEstadoSideBar}></PanelComponent>
+      <NewStatisticalInformationComponent estadoSideBar={isOpen}></NewStatisticalInformationComponent>
     </>
   );
 };
