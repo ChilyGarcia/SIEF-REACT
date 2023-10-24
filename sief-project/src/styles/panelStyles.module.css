@@ -206,6 +206,17 @@ button {
   margin-left: 250px;
 }
 
+.iconContainer {
+  float: right; /* Alinear a la derecha */
+  margin-right: 10px; /* Espacio entre el ícono de usuario y el borde derecho del navbar */
+}
+
+
+.iconFontAwesome {
+  font-size: 25px;
+  margin-top: 8px;
+  color: #991a1a;
+}
 @font-face {
   font-family: "Titillium Web";
   font-style: normal;

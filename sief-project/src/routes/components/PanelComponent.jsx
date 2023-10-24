@@ -18,8 +18,19 @@ export const PanelComponent = ({ enviarEstado }) => {
         }`}
       >
         <button onClick={toggleSidebar}>
-          <i className="fa fa-bars"></i>
+          <i className={`fa fa-bars ${styles.iconFontAwesome}`}></i>
         </button>
+
+        <div className={styles.iconContainer}>
+          <button>
+            <i className={`fa fa-user ${styles.iconFontAwesome}`}></i>
+          </button>
+        </div>
+        <div className={styles.iconContainer}>
+          <button>
+            <i className={`fa fa-bell ${styles.iconFontAwesome}`}></i>
+          </button>
+        </div>
       </div>
       <div
         className={`${styles.sidebar} ${
