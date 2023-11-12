@@ -10,6 +10,12 @@ export const PanelComponent = ({ enviarEstado }) => {
     enviarEstado(!isSidebarOpen);
   };
 
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+
+    history.push("/login");
+  };
+
   return (
     <div className={styles.panelContainer}>
       <div
@@ -97,7 +103,11 @@ export const PanelComponent = ({ enviarEstado }) => {
 
             <ul className={styles.logout}>
               <li>
-                <Link to="/login" className={styles["round-corners"]}>
+                <Link
+                  to="/login"
+                  className={styles["round-corners"]}
+                  onClick={handleLogOut}
+                >
                   <i
                     className={`fa fa-power-off fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
                   ></i>

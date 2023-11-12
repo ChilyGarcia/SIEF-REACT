@@ -6,7 +6,6 @@ export const signInHook = (dataSignIn) => {
   const onInputChange = (event) => {
     const { name, value } = event.target;
 
-    console.log(name, value);
     setForm({
       ...form,
       [name]: value,

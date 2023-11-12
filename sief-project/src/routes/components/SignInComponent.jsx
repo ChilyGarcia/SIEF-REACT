@@ -6,15 +6,16 @@ import styles from "../../styles/loginStyles.module.css";
 export const SignInComponent = () => {
   const dataSignIn = {
     nombres: "",
+    apellidos: "",
     email: "",
     password: "",
   };
 
   const { form, onInputChange } = signInHook(dataSignIn);
 
-  const { nombres, email, password } = form;
+  const { nombres, email, password, apellidos } = form;
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
     if (nombres == "" || email == "" || password == "") {
@@ -24,18 +25,35 @@ export const SignInComponent = () => {
         text: "No se puede hacer el registro con datos en blanco",
       });
     } else {
-      Swal.fire({
-        icon: "success",
-        title: "Registro exitoso",
-        text: "Tus datos han sido registrados correctamente.",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.reload();
-        }
-      });
+      try {
+        const response = await fetch("http://localhost:3000/register", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        });
 
-      console.log(form);
+        if (!response) {
+          throw new Error("Error al registrar nuevo usuario");
+        }
+
+        console.log(response);
+        Swal.fire({
+          icon: "success",
+          title: "Registro exitoso",
+          text: "Tus datos han sido registrados correctamente.",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.reload();
+          }
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
+
+    console.log(form);
   };
 
   return (
@@ -43,20 +61,35 @@ export const SignInComponent = () => {
       <div className={styles["card-back"]}>
         <div className={styles["center-wrap"]}>
           <div className={styles["section"] + " text-center"}>
-            <h4 className={`mb-4 pb-3 ${styles["custom-heading"]}`}>Registrarse</h4>
+            <h4 className={`mb-4 pb-3 ${styles["custom-heading"]}`}>
+              Registrarse
+            </h4>
             <form onSubmit={onSubmit}>
               <div className={styles["form-group"]}>
                 <input
                   type="text"
                   name="nombres"
                   className={styles["form-style"]}
-                  placeholder="Nombres y apellidos"
+                  placeholder="Nombres"
                   id="nombres"
                   autoComplete="off"
                   value={nombres}
                   onChange={(event) => onInputChange(event)}
                 ></input>
                 <i className={styles["input-icon"] + " uil uil-user"}></i>
+              </div>
+              <div className={styles["form-group"] + " mt-2"}>
+                <input
+                  type="apellidos"
+                  name="apellidos"
+                  className={styles["form-style"]}
+                  placeholder="Apellidos"
+                  id="apellidos"
+                  autoComplete="off"
+                  value={apellidos}
+                  onChange={(event) => onInputChange(event)}
+                ></input>
+                <i className={styles["input-icon"] + " uil uil-at"}></i>
               </div>
               <div className={styles["form-group"] + " mt-2"}>
                 <input

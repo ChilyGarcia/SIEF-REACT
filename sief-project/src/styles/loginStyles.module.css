@@ -32,7 +32,11 @@ h4 {
 }
 
 .custom-heading {
-  color: rgb(255, 255, 255); /* Cambia el color a rojo, puedes ajustar el valor según tu preferencia */
+  color: rgb(
+    255,
+    255,
+    255
+  ); /* Cambia el color a rojo, puedes ajustar el valor según tu preferencia */
 }
 
 .custom-span {
@@ -296,4 +300,8 @@ h6 span {
   height: 26px;
   width: auto;
   display: block;
+}
+
+.mgtop {
+  margin-top: 10px;
 }

@@ -20,9 +20,42 @@ export const LogInComponent = () => {
 
   const { email, password } = form;
 
-  const onSubmit = (event) => {
+  const validacionToken = () => {
+    const getToken = localStorage.getItem("token");
+
+    if (getToken) {
+      console.log("Existe token, ingrese");
+    }
+  };
+
+  const onSubmit = async (event) => {
     event.preventDefault();
-    console.log(form);
+
+    try {
+      const response = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!response) throw new Error("Error request");
+
+      if (response.status === 200) {
+        console.log("Login successful");
+        const responseData = await response.json();
+        localStorage.setItem("token", responseData.token);
+
+        window.location.href = "graficas";
+      } else {
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
+
+    validacionToken();
   };
 
   return (
@@ -93,15 +126,7 @@ export const LogInComponent = () => {
                               type="submit"
                               className={styles["btn"] + " mt-4"}
                             >
-                              <Link
-                                to="/graficas"
-                                style={{
-                                  color: "#6b1212",
-                                  textDecoration: "none",
-                                }}
-                              >
-                                Iniciar sesión
-                              </Link>
+                              Iniciar sesion
                             </button>
                           </form>
                         </div>
