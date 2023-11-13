@@ -2,7 +2,7 @@ import { loginHook } from "../../hooks/loginHook";
 import { useRef, useEffect } from "react";
 import styles from "../../styles/loginStyles.module.css";
 import { SignInComponent } from "./SignInComponent";
-import { Link } from "react-router-dom";
+
 
 export const LogInComponent = () => {
   const formRef = useRef();
@@ -25,6 +25,7 @@ export const LogInComponent = () => {
 
     if (getToken) {
       console.log("Existe token, ingrese");
+      
     }
   };
 
@@ -46,6 +47,7 @@ export const LogInComponent = () => {
         console.log("Login successful");
         const responseData = await response.json();
         localStorage.setItem("token", responseData.token);
+        
 
         window.location.href = "graficas";
       } else {
@@ -56,6 +58,7 @@ export const LogInComponent = () => {
     }
 
     validacionToken();
+    
   };
 
   return (
