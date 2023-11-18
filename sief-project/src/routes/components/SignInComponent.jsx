@@ -9,6 +9,8 @@ export const SignInComponent = () => {
     apellidos: "",
     email: "",
     password: "",
+    role:"user"
+    
   };
 
   const { form, onInputChange } = signInHook(dataSignIn);
@@ -46,6 +48,7 @@ export const SignInComponent = () => {
         }).then((result) => {
           if (result.isConfirmed) {
             window.location.reload();
+            
           }
         });
       } catch (error) {

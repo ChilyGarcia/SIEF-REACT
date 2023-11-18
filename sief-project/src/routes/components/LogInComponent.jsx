@@ -46,10 +46,13 @@ export const LogInComponent = () => {
         console.log("Login successful");
         const responseData = await response.json();
         localStorage.setItem("token", responseData.token);
+        localStorage.setItem("user", responseData.email);
+        localStorage.setItem("role", responseData.role);
 
         window.location.href = "graficas";
       } else {
         console.log("Login failed");
+        console.log(email, password);
 
         Swal.fire({
           icon: "error",

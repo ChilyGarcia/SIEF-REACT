@@ -12,9 +12,13 @@ export const PanelComponent = ({ enviarEstado }) => {
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
 
     history.push("/login");
   };
+
+  const userRole = localStorage.getItem("role");
 
   return (
     <div className={styles.panelContainer}>
@@ -46,59 +50,64 @@ export const PanelComponent = ({ enviarEstado }) => {
         <div className={styles["sidebar-content"]}>
           <nav className={`${styles["main-menu"]} ${styles["sidebar-open"]}`}>
             <ul>
-              <li>
-                <Link to="/graficas" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-bar-chart-o fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
+              {(userRole === "user" || userRole === "admin") && (
+                <li>
+                  <Link to="/graficas" className={styles["round-corners"]}>
+                    <i
+                      className={`fa fa-bar-chart-o fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
 
-                  <span className={styles["nav-text"]}>Gráficas</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/infoEstadistica" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-book fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
-                  <span className={styles["nav-text"]}>
-                    Información estadística
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/auditorias" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-table fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
-                  <span className={styles["nav-text"]}>Auditorias</span>
-                </Link>
-              </li>
-              <li className={styles["has-subnav"]}>
-                <Link to="/nuevaInfo" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-plus fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
-                  <span className={styles["nav-text"]}>Nueva información</span>
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/infoHistorica" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-info fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
-                  <span className={styles["nav-text"]}>
-                    Informacion histórica
-                  </span>
-                </Link>
-              </li> */}
-              <li className={styles["has-subnav"]}>
-                <Link to="/nuevoUsuario" className={styles["round-corners"]}>
-                  <i
-                    className={`fa fa-user fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
-                  ></i>
-                  <span className={styles["nav-text"]}>Nuevo usuario</span>
-                </Link>
-              </li>
+                    <span className={styles["nav-text"]}>Gráficas</span>
+                  </Link>
+                </li>
+              )}
+              {(userRole === "user" || userRole === "admin") && (
+                <li>
+                  <Link
+                    to="/infoEstadistica"
+                    className={styles["round-corners"]}
+                  >
+                    <i
+                      className={`fa fa-book fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
+                    <span className={styles["nav-text"]}>
+                      Información estadística
+                    </span>
+                  </Link>
+                </li>
+              )}
+              {userRole === "admin" && (
+                <li>
+                  <Link to="/auditorias" className={styles["round-corners"]}>
+                    <i
+                      className={`fa fa-table fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
+                    <span className={styles["nav-text"]}>Auditorias</span>
+                  </Link>
+                </li>
+              )}
+              {userRole === "admin" && (
+                <li className={styles["has-subnav"]}>
+                  <Link to="/nuevaInfo" className={styles["round-corners"]}>
+                    <i
+                      className={`fa fa-plus fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
+                    <span className={styles["nav-text"]}>
+                      Nueva información
+                    </span>
+                  </Link>
+                </li>
+              )}
+              {userRole === "admin" && (
+                <li className={styles["has-subnav"]}>
+                  <Link to="/nuevoUsuario" className={styles["round-corners"]}>
+                    <i
+                      className={`fa fa-user fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
+                    <span className={styles["nav-text"]}>Nuevo usuario</span>
+                  </Link>
+                </li>
+              )}
             </ul>
 
             <ul className={styles.logout}>
