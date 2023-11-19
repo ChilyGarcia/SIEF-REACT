@@ -54,7 +54,6 @@ export const NewStatisticalInformationComponent = () => {
       });
     } else {
       try {
-        // Validar que el periodo tenga el formato adecuado
         const periodoRegex = /^\d{4}-(1|2)$/;
 
         if (!periodo.match(periodoRegex)) {
@@ -76,6 +75,14 @@ export const NewStatisticalInformationComponent = () => {
           }
         );
 
+
+        const currentDate = new Date().toISOString().split('T')[0];
+        const updatedDataAudit = {
+          ...dataAudit,
+          programa: programa,
+          fecha: currentDate, // Puedes cambiar esto según tus necesidades
+        };
+
         const responseAudit = await fetch(
           "http://localhost:3000/api/new-audit",
           {
@@ -83,7 +90,7 @@ export const NewStatisticalInformationComponent = () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(dataAudit),
+            body: JSON.stringify(updatedDataAudit),
           }
         );
 

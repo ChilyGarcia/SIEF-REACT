@@ -105,15 +105,7 @@ export const StatisticalInformationComponent = ({ estadoSideBar }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div className={styles.buttonGroup}>
-            <button
-              className="btn btn-outline-danger"
-              onClick={() => {
-                setCurrentPage(1); // Reinicia la página actual al realizar una nueva búsqueda
-                // Puedes hacer algo con el valor de searchTerm aquí si es necesario
-              }}
-            >
-              Buscar
-            </button>
+ 
             <button className="btn btn-outline-success" onClick={exportToExcel}>
               Excel
             </button>

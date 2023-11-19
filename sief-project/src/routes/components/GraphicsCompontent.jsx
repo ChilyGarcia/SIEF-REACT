@@ -22,7 +22,7 @@ export const GraphicsCompontent = ({estadoSideBar}) => {
   const containerClass = estadoSideBar ? styles.containerOpen : styles.containerClosed;
 
   const data = {
-    labels: ["2019", "2020", "2021"],
+    labels: ["2018", "2019", "2020"],
     datasets: [
       {
         label: "Matriculados",
@@ -34,6 +34,40 @@ export const GraphicsCompontent = ({estadoSideBar}) => {
       {
         label: "Graduados",
         data: [2, 4, 6],
+        backgroundColor: "rgba(57, 242, 140, 0.8)",
+        borderColor: "rgba(57, 242, 140, 0.8)",
+        borderWidth: 1,
+      },
+      {
+        label: "Inscritos",
+        data: [2, 8, 10],
+        backgroundColor: "rgba(57, 242, 140, 0.8)",
+        borderColor: "rgba(57, 242, 140, 0.8)",
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  const dataRigth = {
+    labels: ["2021", "2022", "2023"],
+    datasets: [
+      {
+        label: "Matriculados",
+        data: [2, 6, 9],
+        backgroundColor: "rgba(79, 95, 221, 0.8)",
+        borderColor: "rgba(79, 95, 221, 0.8)",
+        borderWidth: 1,
+      },
+      {
+        label: "Graduados",
+        data: [2, 4, 9],
+        backgroundColor: "rgba(57, 242, 140, 0.8)",
+        borderColor: "rgba(57, 242, 140, 0.8)",
+        borderWidth: 1,
+      },
+      {
+        label: "Inscritos",
+        data: [1, 2, 16],
         backgroundColor: "rgba(57, 242, 140, 0.8)",
         borderColor: "rgba(57, 242, 140, 0.8)",
         borderWidth: 1,
@@ -50,7 +84,7 @@ export const GraphicsCompontent = ({estadoSideBar}) => {
         </div>
 
         <div className={styles.card2}>
-          <Bar data={data} options={options}></Bar>
+          <Bar data={dataRigth} options={options}></Bar>
         </div>
       </div>
     </>

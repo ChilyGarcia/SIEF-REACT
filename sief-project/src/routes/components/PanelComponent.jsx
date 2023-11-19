@@ -50,7 +50,7 @@ export const PanelComponent = ({ enviarEstado }) => {
         <div className={styles["sidebar-content"]}>
           <nav className={`${styles["main-menu"]} ${styles["sidebar-open"]}`}>
             <ul>
-              {(userRole === "user" || userRole === "admin") && (
+              {(userRole === "user" || userRole === "admin" || userRole === "director") && (
                 <li>
                   <Link to="/graficas" className={styles["round-corners"]}>
                     <i
@@ -61,7 +61,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
-              {(userRole === "user" || userRole === "admin") && (
+              {(userRole === "user" || userRole === "admin" || userRole === "director") && (
                 <li>
                   <Link
                     to="/infoEstadistica"
@@ -76,7 +76,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
-              {userRole === "admin" && (
+              {(userRole === "admin" || userRole === "director") && (
                 <li>
                   <Link to="/auditorias" className={styles["round-corners"]}>
                     <i
@@ -86,7 +86,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
-              {userRole === "admin" && (
+              {(userRole === "admin" || userRole === "director") && (
                 <li className={styles["has-subnav"]}>
                   <Link to="/nuevaInfo" className={styles["round-corners"]}>
                     <i
@@ -98,7 +98,7 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
-              {userRole === "admin" && (
+              {(userRole === "admin" || userRole === "director") && (
                 <li className={styles["has-subnav"]}>
                   <Link to="/nuevoUsuario" className={styles["round-corners"]}>
                     <i
