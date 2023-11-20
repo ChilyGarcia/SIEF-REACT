@@ -105,7 +105,6 @@ export const StatisticalInformationComponent = ({ estadoSideBar }) => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <div className={styles.buttonGroup}>
- 
             <button className="btn btn-outline-success" onClick={exportToExcel}>
               Excel
             </button>
