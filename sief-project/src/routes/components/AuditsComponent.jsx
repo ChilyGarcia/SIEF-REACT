@@ -22,7 +22,6 @@ export const AuditsComponent = ({ estadoSideBar }) => {
 
   const tableClassAudits = estadoSideBar ? styles.tableOpen : styles.tableClose;
   const thClassAudits = estadoSideBar ? styles.thOpen : styles.thClose;
-
   const paginationClassAudits = estadoSideBar
     ? styles.paginationOpen
     : styles.paginationClose;
@@ -31,10 +30,16 @@ export const AuditsComponent = ({ estadoSideBar }) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
 
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <>
@@ -60,15 +65,39 @@ export const AuditsComponent = ({ estadoSideBar }) => {
         </tbody>
       </table>
       <div className={paginationClassAudits}>
-        {pageNumbers.map((number) => (
-          <button
-            key={number}
-            onClick={() => setCurrentPage(number)}
-            className={number === currentPage ? "active" : ""}
-          >
-            {number}
-          </button>
-        ))}
+        <button
+          onClick={() => handlePageChange(1)}
+          disabled={currentPage === 1}
+        >
+          {"<<"}
+        </button>
+        <button
+          onClick={() =>
+            handlePageChange((prevPage) =>
+              prevPage > 1 ? prevPage - 1 : prevPage
+            )
+          }
+          disabled={currentPage === 1}
+        >
+          {"<"}
+        </button>
+        <span className="current-page">{currentPage}</span>
+        <button
+          onClick={() =>
+            handlePageChange((prevPage) =>
+              prevPage < totalPages ? prevPage + 1 : prevPage
+            )
+          }
+          disabled={currentPage === totalPages}
+        >
+          {">"}
+        </button>
+        <button
+          onClick={() => handlePageChange(totalPages)}
+          disabled={currentPage === totalPages}
+        >
+          {">>"}
+        </button>
       </div>
     </>
   );
