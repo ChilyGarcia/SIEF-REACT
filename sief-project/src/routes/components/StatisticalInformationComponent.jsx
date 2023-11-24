@@ -88,10 +88,7 @@ export const StatisticalInformationComponent = ({ estadoSideBar }) => {
 
   const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
-  const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(filteredData.length / itemsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
 
   return (
     <>
@@ -125,7 +122,7 @@ export const StatisticalInformationComponent = ({ estadoSideBar }) => {
         </thead>
         <tbody className={styles["table-hover"]}>
           {currentData.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} className={styles["fixed-height-row"]}>
               {Object.values(item).map((value, i) => (
                 <td key={i} className={styles["text-left"]}>
                   {value}
@@ -136,15 +133,36 @@ export const StatisticalInformationComponent = ({ estadoSideBar }) => {
         </tbody>
       </table>
       <div className={paginationClass}>
-        {pageNumbers.map((number) => (
-          <button
-            key={number}
-            onClick={() => setCurrentPage(number)}
-            className={number === currentPage ? "active" : ""}
-          >
-            {number}
-          </button>
-        ))}
+        <button onClick={() => setCurrentPage(1)} disabled={currentPage === 1}>
+          {"<<"}
+        </button>
+        <button
+          onClick={() =>
+            setCurrentPage((prevPage) =>
+              prevPage > 1 ? prevPage - 1 : prevPage
+            )
+          }
+          disabled={currentPage === 1}
+        >
+          {"<"}
+        </button>
+        <span className="current-page">{currentPage}</span>
+        <button
+          onClick={() =>
+            setCurrentPage((prevPage) =>
+              prevPage < totalPages ? prevPage + 1 : prevPage
+            )
+          }
+          disabled={currentPage === totalPages}
+        >
+          {">"}
+        </button>
+        <button
+          onClick={() => setCurrentPage(totalPages)}
+          disabled={currentPage === totalPages}
+        >
+          {">>"}
+        </button>
       </div>
     </>
   );

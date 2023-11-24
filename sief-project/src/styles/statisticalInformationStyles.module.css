@@ -198,3 +198,7 @@ td.text-right {
   margin-top: 3%;
   margin-left: 50%;
 }
+
+.fixed-height-row {
+  height: 50px !important; /* Adjust the height as needed */
+}
