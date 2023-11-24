@@ -225,3 +225,16 @@ button {
     url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff)
       format("woff");
 }
+
+.logoImage{
+  height: 120px;
+  width: 100ppx;
+  margin-left: 28px;
+}
+
+hr{
+  border: 1px solid #ffffff; 
+  margin: 10px 0; 
+
+}
+

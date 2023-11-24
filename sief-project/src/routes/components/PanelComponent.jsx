@@ -42,6 +42,7 @@ export const PanelComponent = ({ enviarEstado }) => {
           </button>
         </div>
       </div>
+
       <div
         className={`${styles.sidebar} ${
           isSidebarOpen ? styles["sidebar-open"] : ""
@@ -49,6 +50,14 @@ export const PanelComponent = ({ enviarEstado }) => {
       >
         <div className={styles["sidebar-content"]}>
           <nav className={`${styles["main-menu"]} ${styles["sidebar-open"]}`}>
+            <div className={styles.logoContainer}>
+              <img
+                src="fesc.png" // Reemplaza con la ruta real de tu imagen
+                alt="Logo"
+                className={styles.logoImage}
+              />
+            </div>
+            <hr></hr>
             <ul>
               {(userRole === "user" ||
                 userRole === "admin" ||
@@ -119,12 +128,12 @@ export const PanelComponent = ({ enviarEstado }) => {
                     <i
                       className={`fa fa-book fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
                     ></i>
-                    <span className={styles["nav-text"]}>Informacion historica</span>
+                    <span className={styles["nav-text"]}>
+                      Informacion historica
+                    </span>
                   </Link>
                 </li>
               )}
-
-              
             </ul>
 
             <ul className={styles.logout}>
