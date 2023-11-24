@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { PanelComponent } from "./components/PanelComponent";
+import { HistoricInformationComponent } from "./components/HistoricInformationComponent";
 
 export const HistoricInformationScreen = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
+  const enviarEstadoSideBar = (estado) => {
+    setIsOpen(estado);
+  };
   return (
     <>
-      <PanelComponent></PanelComponent>
-      <h1>Informacion historica</h1>
+      <PanelComponent enviarEstado={enviarEstadoSideBar}></PanelComponent>
+      <HistoricInformationComponent
+        estadoSideBar={isOpen}
+      ></HistoricInformationComponent>
     </>
   );
 };

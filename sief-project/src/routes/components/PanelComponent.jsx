@@ -50,7 +50,9 @@ export const PanelComponent = ({ enviarEstado }) => {
         <div className={styles["sidebar-content"]}>
           <nav className={`${styles["main-menu"]} ${styles["sidebar-open"]}`}>
             <ul>
-              {(userRole === "user" || userRole === "admin" || userRole === "director") && (
+              {(userRole === "user" ||
+                userRole === "admin" ||
+                userRole === "director") && (
                 <li>
                   <Link to="/graficas" className={styles["round-corners"]}>
                     <i
@@ -61,7 +63,9 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
-              {(userRole === "user" || userRole === "admin" || userRole === "director") && (
+              {(userRole === "user" ||
+                userRole === "admin" ||
+                userRole === "director") && (
                 <li>
                   <Link
                     to="/infoEstadistica"
@@ -108,6 +112,19 @@ export const PanelComponent = ({ enviarEstado }) => {
                   </Link>
                 </li>
               )}
+
+              {(userRole === "admin" || userRole === "director") && (
+                <li className={styles["has-subnav"]}>
+                  <Link to="/infoHistorica" className={styles["round-corners"]}>
+                    <i
+                      className={`fa fa-book fa-2x ${styles["fa"]} ${styles["fa-2x"]}`}
+                    ></i>
+                    <span className={styles["nav-text"]}>Informacion historica</span>
+                  </Link>
+                </li>
+              )}
+
+              
             </ul>
 
             <ul className={styles.logout}>

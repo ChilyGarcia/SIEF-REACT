@@ -49,7 +49,7 @@ export const AuditsComponent = ({ estadoSideBar }) => {
         </thead>
         <tbody className={styles["table-hover"]}>
           {currentData.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} className={styles["fixed-height-row"]}>
               {Object.values(item).map((value, i) => (
                 <td key={i} className={styles["text-left"]}>
                   {value}

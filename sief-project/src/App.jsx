@@ -37,6 +37,7 @@ export const App = () => {
           <Route path="/nuevaInfo" element={<NewInformationScreen/>}></Route>
           <Route path="/infoHistorica" element={<HistoricInformationScreen/>}></Route>
           <Route path="/nuevoUsuario" element={<NewUserScreen/>}></Route>
+          
         </Route>
       </Routes>
     </>

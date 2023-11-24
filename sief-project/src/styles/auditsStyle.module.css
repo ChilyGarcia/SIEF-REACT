@@ -33,7 +33,7 @@
   background: white;
   border-radius: 3px;
   border-collapse: collapse;
-  height: 320px;
+
   margin-left: 2%;
   margin-top: 8%;
   max-width: 1300px;
@@ -47,7 +47,6 @@
   background: white;
   border-radius: 3px;
   border-collapse: collapse;
-  height: 300px; /* Ajusta este valor según tus necesidades */
   margin-left: 23%;
   margin-top: 8%;
   max-width: 1000px; /* Ajusta este valor según tus necesidades */
@@ -199,4 +198,8 @@ td.text-right {
 .paginationClose {
   margin-top: 3%;
   margin-left: 50%;
+}
+
+.fixed-height-row {
+  height: 50px !important; /* Adjust the height as needed */
 }
