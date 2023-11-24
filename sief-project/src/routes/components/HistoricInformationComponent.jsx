@@ -14,69 +14,123 @@ export const HistoricInformationComponent = ({ estadoSideBar }) => {
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2012-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_02.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2013-1",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2013_01.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2013-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2013_02.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2014-1",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2014_01.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2014-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2014_02.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2015-1",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2015_01.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2015-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2015_02.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2016-1",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2016_01.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2016-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2016_02.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2017-1",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2017_01.pdf",
     },
     {
       nombre: "Informes estadisticos",
-      periodo: "2012-1",
+      periodo: "2017-2",
       accion:
-        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2012_01.pdf",
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2017_02.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2018-1",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2018_01.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2018-2",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2018_02.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2019-1",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2019_01.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2019-2",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2019_02.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2020-1",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2020_01.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2020-2",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2020_02.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2021-1",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2021_01.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2021-2",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2021_02.pdf",
+    },
+    {
+      nombre: "Informes estadisticos",
+      periodo: "2022-1",
+      accion:
+        "http://200.119.89.147/sief/cod/informes_estadisticos/Informes_est_2022_01.pdf",
     },
   ];
 
@@ -131,7 +185,7 @@ export const HistoricInformationComponent = ({ estadoSideBar }) => {
         </thead>
         <tbody className={styles["table-hover"]}>
           {currentData.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} className={styles["fixed-height-row"]}>
               <td className={styles["text-left"]}>{item.nombre}</td>
               <td className={styles["text-left"]}>{item.periodo}</td>
               <td className={styles["text-left"]}>
@@ -139,7 +193,11 @@ export const HistoricInformationComponent = ({ estadoSideBar }) => {
                   onClick={() => handleButtonClick(item.accion)}
                   className={styles.button}
                 >
-                  Ver Detalles
+                  <img
+                    src="/archivo-pdf.png"
+                    alt="Ver Detalles"
+                    className={styles["img-styles"]}
+                  />
                 </button>
               </td>
             </tr>
